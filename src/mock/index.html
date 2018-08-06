@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="swiper/swiper.css">
+    <link rel="stylesheet" href="sass/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <header>有书头条</header>
+        <section>
+            <div class="one swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <h3>讨论版</h3>
+                        <div class="cont">
+                            <dl>
+                                <dt>
+                                    <img src="img/1.jpg" alt="">
+                                </dt>
+                                <dd>论杂志封面的宠儿</dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <img src="img/1.jpg" alt="">
+                                </dt>
+                                <dd>论杂志封面的宠儿</dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <img src="img/1.jpg" alt="">
+                                </dt>
+                                <dd>论杂志封面的宠儿</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            <div class="two">
+                <h3>有书头条</h3>
+                <div class="list">
+                    <dl>
+                        <dd>
+                            <h5>你所不知道的转转有书</h5>
+                            <h6>你所不知道的转转有书你所不知道的转转有书</h6>
+                        </dd>
+                        <dt>
+                            <img src="img/1.jpg" alt="">
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="js/flexible.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="swiper/swiper.js"></script>
+    <script>
+        var list = document.querySelector('.list');
+        ajax('/api/dataList', function (data) {
+            var str = '';
+            data.list.forEach(function (val) {
+                str +=`<dl>
+                        <dd>
+                            <h5>${val.tit}</h5>
+                            <h6>${val.title}</h6>
+                        </dd>
+                        <dt>
+                            <img src="${val.src}" alt="">
+                        </dt>
+                    </dl>`
+            })
+            list.innerHTML = str;
+        })
+    </script>
+</body>
+</html>
