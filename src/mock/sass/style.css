@@ -238,7 +238,8 @@ section .one .swiper-slide .cont {
 }
 
 section .one .swiper-slide .cont dl {
-  width: 32%;
+  width: 38%;
+  flex-shrink: 0;
   margin: 0 0.26667rem;
 }
 
