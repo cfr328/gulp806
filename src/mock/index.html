@@ -104,7 +104,12 @@
     <script src="js/flexible.js"></script>
     <script src="js/ajax.js"></script>
     <script src="swiper/swiper.js"></script>
+    <script src="swiper/bscroll.min.js"></script>
     <script>
+        new Swiper('.one', {
+            autoplay:true
+        })
+        //new Bscroll()
         var list = document.querySelector('.list');
         ajax('/api/dataList', function (data) {
             var str = '';
